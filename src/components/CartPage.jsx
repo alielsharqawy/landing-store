@@ -2,12 +2,12 @@ import React from "react";
 
 const CartPage = ({ cart }) => {
   return (
-    <div className="container mx-auto p-4 ">
+    <div className="container mx-auto p-4">
       <h1 className="text-xl font-bold mb-4">Your Cart</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {cart.map((product, index) => (
+        {cart.map((product) => (
           <div
-            key={index}
+            key={product.id}
             className="bg-white shadow-md rounded-lg p-4 flex flex-col items-center"
           >
             <img
