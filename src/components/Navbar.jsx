@@ -28,7 +28,7 @@ const Navbar = ({ cart, toggleCart }) => {
             <option key={index}>{category}</option>
           ))}
         </select>
-        <button className="bg-[#f5a623] text-white p-3 hover:bg-[#e89c1a]">
+        <button className="bg-[#f5a623] text-white p-4 hover:bg-[#e89c1a]">
           <CiSearch size={20} />
         </button>
       </div>

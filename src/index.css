@@ -87,9 +87,6 @@ p {
     justify-content: start;
     align-items: center;
   }
-  .navbar .icons {
-    display: none;
-  }
   .boxes,
   .boxes .card {
     display: flex;
