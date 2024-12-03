@@ -23,7 +23,7 @@ const AllDepartments = () => {
   ];
 
   return (
-    <div className="container mx-auto flex flex-col md:flex-row flex-wrap items-start md:items-center mt-4 px-4 gap-4">
+    <div className="container mx-auto flex flex-col md:flex-row flex-wrap items-start md:items-center m-1 px-4 gap-4">
       {/* All Departments Dropdown */}
       <div className="relative w-full md:w-auto">
         <button

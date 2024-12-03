@@ -1,27 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { FaArrowRight } from "react-icons/fa6";
+import { BsCartPlus } from "react-icons/bs";
 
-function FeaturedProducts() {
+function FeaturedProducts({ addToCart }) {
   const [products, setProducts] = useState([]);
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState("all");
 
   useEffect(() => {
-    // Fetch data
     const fetchProducts = async () => {
       try {
         const response = await fetch("https://dummyjson.com/products");
         const data = await response.json();
 
-        // Filter out products with IDs 6, 9, and 19
         const filteredProducts = data.products.filter(
           (product) => product.id !== 6 && product.id !== 9 && product.id !== 19
         );
 
         setProducts(filteredProducts);
+        setDisplayedProducts(filteredProducts);
         setLoading(false);
-        setDisplayedProducts(filteredProducts); // Default to all products
       } catch (error) {
         console.error("Error fetching products data:", error);
         setLoading(false);
@@ -62,7 +60,6 @@ function FeaturedProducts() {
     );
   }
 
-  // Extract unique categories from products
   const uniqueCategories = [
     "all",
     ...new Set(products.map((product) => product.category)),
@@ -111,10 +108,13 @@ function FeaturedProducts() {
                 Price: <span className="text-green-500">${product.price}</span>
               </p>
               <div className="flex justify-center items-center gap-3 mt-2">
-                <p className="text-blue-600 font-semibold hover:underline text-sm">
-                  Shop now
+                <p
+                  className="text-yellow-500 font-semibold hover:underline text-sm cursor-pointer"
+                  onClick={() => addToCart(product)}
+                >
+                  Add to Cart
                 </p>
-                <FaArrowRight className="text-yellow-500" />
+                <BsCartPlus size={25} className="text-yellow-500" />
               </div>
             </div>
           </div>

@@ -3,7 +3,7 @@ import { AiOutlineRetweet } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import { IoBagCheckOutline } from "react-icons/io5";
 
-const Navbar = () => {
+const Navbar = ({ cart, toggleCart }) => {
   const categories = [
     "All Categories",
     "Electronics",
@@ -12,25 +12,10 @@ const Navbar = () => {
     "Sports",
   ];
 
-  const icons = [
-    {
-      icon: <AiOutlineRetweet size={20} className="text-gray-500" />,
-      label: "Retweet",
-    },
-    {
-      icon: <CiHeart size={20} className="text-gray-500" />,
-      label: "Wishlist",
-    },
-    {
-      icon: <IoBagCheckOutline size={20} className="text-gray-500" />,
-      label: "Cart",
-    },
-  ];
-
   return (
-    <div className="navbar container  flex items-center justify-between mt-6">
+    <div className="navbar container flex items-center justify-between mt-6">
       <h1 className="text-3xl font-bold opacity-60">electro</h1>
-      
+
       {/* Search Bar Section */}
       <div className="search-bar flex items-center rounded-full overflow-hidden w-full max-w-lg bg-white">
         <input
@@ -50,11 +35,20 @@ const Navbar = () => {
 
       {/* Icons Section */}
       <div className="icons flex items-center gap-3">
-        {icons.map((item, index) => (
-          <div key={index} className="icon-item" aria-label={item.label}>
-            {item.icon}
-          </div>
-        ))}
+        <div
+          className="relative icon-item cursor-pointer"
+          aria-label="Cart"
+          onClick={toggleCart} 
+        >
+          <IoBagCheckOutline size={35} className="text-gray-500" />
+          {cart.length > 0 && (
+            <span className="absolute top-[-5px] right-0 bg-red-500 text-white text-sm rounded-full px-1">
+              {cart.length}
+            </span>
+          )}
+        </div>
+        <AiOutlineRetweet size={35} className="text-gray-500" />
+        <CiHeart size={35} className="text-gray-500" />
       </div>
     </div>
   );
