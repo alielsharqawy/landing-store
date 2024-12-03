@@ -14,24 +14,24 @@ function App() {
   // cart options
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-
   const addToCart = (product) => {
     setCart((prevCart) => [...prevCart, product]);
   };
-
   const toggleCart = () => {
     setIsCartOpen((prev) => !prev);
   };
+  // search items
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <div>
       <Header />
-      <Navbar cart={cart} toggleCart={toggleCart} />
+      <Navbar cart={cart} toggleCart={toggleCart} onSearch={setSearchQuery} />
       {isCartOpen && <CartPage cart={cart} />}
       <AllDepartments />
       <HeroSection />
       <Items />
-      <FeaturedProducts addToCart={addToCart} />
+      <FeaturedProducts addToCart={addToCart} searchQuery={searchQuery} />
       <Footer />
     </div>
   );

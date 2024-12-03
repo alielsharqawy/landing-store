@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BsCartPlus } from "react-icons/bs";
 
-function FeaturedProducts({ addToCart }) {
+function FeaturedProducts({ addToCart, searchQuery }) {
   const [products, setProducts] = useState([]);
   const [displayedProducts, setDisplayedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -29,6 +29,7 @@ function FeaturedProducts({ addToCart }) {
     fetchProducts();
   }, []);
 
+  // Apply category filtering
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
 
@@ -41,6 +42,18 @@ function FeaturedProducts({ addToCart }) {
       setDisplayedProducts(filtered);
     }
   };
+
+  // Apply search filtering
+  useEffect(() => {
+    if (searchQuery) {
+      const filtered = products.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setDisplayedProducts(filtered);
+    } else {
+      setDisplayedProducts(products);
+    }
+  }, [searchQuery, products]);
 
   if (loading) {
     return (
