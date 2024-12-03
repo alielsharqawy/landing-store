@@ -72,7 +72,7 @@ const FeaturedProducts = ({ addToCart, removeFromCart, cart }) => {
       </div>
 
       {/* show Products */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 p-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 px-20 py-10">
         {displayedProducts.map((product) => {
           const inCart = cart.some((item) => item.id === product.id);
           return (

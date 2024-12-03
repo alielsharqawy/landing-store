@@ -9,6 +9,10 @@ import Items from "./components/Items";
 import CartPage from "./components/CartPage";
 import Categories from "./components/Categories";
 import Dashboard from "./components/Dashboard";
+import Companies from "./components/Companies";
+import RecentlyViewed from "./components/RecentlyViewed";
+import Landing from "./components/Landing";
+import Bestsellers from "./components/Bestsellers";
 
 function App() {
   // cart options
@@ -50,6 +54,18 @@ function App() {
         searchQuery={searchQuery}
       />
       <Categories />
+      <Bestsellers
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        cart={cart}
+      />
+      <Landing />
+      <RecentlyViewed
+        cart={cart}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+      />
+      <Companies />
       <Dashboard />
       <Footer />
     </div>
