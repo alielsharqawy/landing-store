@@ -5,6 +5,11 @@ module.exports = {
       fontFamily: {
         spartan: ['"Spartan"', "sans-serif"], // Add custom font
       },
+      zIndex: {
+        50: "50",
+        100: "100",
+        200: "200",
+      },
     },
   },
   plugins: [],

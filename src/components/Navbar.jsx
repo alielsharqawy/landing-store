@@ -118,7 +118,7 @@ const Navbar = ({ cart, setCart, onSearch }) => {
 
       {/* Prompt for Cart */}
       {showPrompt && (
-        <div className="fixed top-25 right-4 bg-white shadow-lg rounded-lg p-4 sm:p-6 w-64 sm:w-72 z-50">
+        <div className="fixed top-24 right-4 bg-white shadow-lg rounded-lg p-4 sm:p-6 w-64 sm:w-72 z-[100]">
           <h2 className="text-lg font-bold mb-4">Your Cart</h2>
           {cart.length > 0 ? (
             <div>
@@ -145,12 +145,6 @@ const Navbar = ({ cart, setCart, onSearch }) => {
                   </li>
                 ))}
               </ul>
-              {/* Total Price */}
-              <div className="mt-4 flex justify-between items-center">
-                <p className="font-bold text-gray-800">Total:</p>
-                <p className="font-bold text-green-500">${totalPrice}</p>
-              </div>
-              {/* Clear Cart Button */}
               <button
                 className="mt-4 bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 w-full"
                 onClick={clearCart}

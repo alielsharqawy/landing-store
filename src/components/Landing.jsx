@@ -6,7 +6,7 @@ const Landing = () => {
     <div className="flex justify-center items-center w-full">
       {/* Image Container */}
       <div
-        className="hover:scale-105 relative bg-cover bg-center w-[90%] h-[25vh] flex items-center justify-between px-8 rounded-lg shadow-lg"
+        className=" relative bg-cover bg-center w-[90%] h-[25vh] flex items-center justify-between px-8 rounded-lg shadow-lg"
         style={{
           backgroundImage: `url(${hero})`,
         }}
