@@ -20,36 +20,41 @@ function Header() {
   ];
 
   return (
-    <div className="header container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 mt-2 px-4">
-      {/* Contact Items */}
-      <div className="right">
-        <ul className="flex flex-wrap justify-center sm:justify-start gap-3 text-sm">
-          {contactItems.map((item, index) => (
-            <li
-              key={index}
-              className="flex justify-between items-center gap-2 whitespace-nowrap"
-            >
-              {item.icon}
-              <a className="text-gray-700">{item.text}</a>
-            </li>
-          ))}
-        </ul>
+    <div>
+      <div className="header mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 mt-2 px-4 max-w-7xl">
+        {/* Contact Items */}
+        <div className="contact w-full sm:w-auto">
+          <ul className="flex flex-wrap justify-center sm:justify-start gap-3 text-sm">
+            {contactItems.map((item, index) => (
+              <li
+                key={index}
+                className="flex items-center gap-2 whitespace-nowrap"
+              >
+                {item.icon}
+                <a className="text-gray-700">{item.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Navigation Items */}
+        <div className="navigation w-full sm:w-auto">
+          <ul className="flex flex-wrap justify-center sm:justify-end gap-3 text-sm">
+            {navigationItems.map((item, index) => (
+              <li
+                key={index}
+                className="flex items-center gap-2 whitespace-nowrap"
+              >
+                {item.icon}
+                <a className="text-gray-700">{item.text}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
 
-      {/* Navigation Items */}
-      <div className="left">
-        <ul className="flex flex-wrap justify-center sm:justify-end gap-3 text-sm">
-          {navigationItems.map((item, index) => (
-            <li
-              key={index}
-              className="flex justify-between items-center gap-2 whitespace-nowrap"
-            >
-              {item.icon}
-              <a className="text-gray-700">{item.text}</a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {/* Divider */}
+      <hr className="border-t-2 border-gray-200 mt-2" />
     </div>
   );
 }

@@ -46,11 +46,13 @@ const Bestsellers = ({ addToCart, removeFromCart, cart }) => {
   );
 
   return (
-    <div className="px-6 md:px-10 lg:px-20 py-10">
+    <div className="px-4 md:px-10 lg:px-20 py-10">
       {/* Header Section */}
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-semibold">Bestsellers</h2>
-        <ul className="flex gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+        <h2 className="text-xl md:text-2xl font-semibold mb-4 md:mb-0">
+          Bestsellers
+        </h2>
+        <ul className="flex flex-wrap gap-3 justify-center">
           {categories.map((category) => (
             <li
               key={category}
@@ -71,11 +73,11 @@ const Bestsellers = ({ addToCart, removeFromCart, cart }) => {
       </div>
 
       {/* Products Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {paginatedProducts.map((product) => (
           <div
             key={product.id}
-            className="relative bg-white shadow-lg rounded-lg p-4 flex gap-4 items-center transition-transform hover:scale-105"
+            className="relative bg-white shadow-lg rounded-lg p-4 flex flex-col md:flex-row gap-4 items-center transition-transform hover:scale-105"
             onMouseEnter={() => setHoveredProduct(product.id)}
             onMouseLeave={() => setHoveredProduct(null)}
           >
@@ -83,7 +85,7 @@ const Bestsellers = ({ addToCart, removeFromCart, cart }) => {
             <img
               src={product.thumbnail}
               alt={product.title}
-              className="w-30 h-60 object-contain rounded-md"
+              className="w-full md:w-28 md:h-28 object-contain rounded-md"
             />
 
             {/* Product Info */}
@@ -93,7 +95,7 @@ const Bestsellers = ({ addToCart, removeFromCart, cart }) => {
                 {product.title}
               </h3>
               <div className="flex items-center justify-between">
-                <p className="text-lg font-semibold text-gray-800">
+                <p className="text-lg font-semibold text-green-500">
                   ${product.price.toFixed(2)}
                 </p>
                 <button
@@ -115,7 +117,7 @@ const Bestsellers = ({ addToCart, removeFromCart, cart }) => {
 
             {/* Compare & Wishlist */}
             {hoveredProduct === product.id && (
-              <div className="absolute bottom-2 left-4 right-4 flex justify-between items-center text-gray-600 transition-transform my-3">
+              <div className="absolute bottom-2 left-4 right-4 flex justify-between items-center text-gray-600 opacity-0 hover:opacity-100 transition-opacity">
                 <div className="flex items-center gap-1 cursor-pointer hover:text-blue-500">
                   <RiScales3Line size={18} />
                   <span className="text-sm">Compare</span>

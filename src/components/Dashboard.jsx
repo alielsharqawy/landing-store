@@ -87,7 +87,7 @@ const Dashboard = () => {
               <h3 className="font-semibold text-sm text-blue-600 transition">
                 {product.title}
               </h3>
-              <p className="text-gray-500 text-sm">${product.price}</p>
+              <p className="text-green-500 text-sm">${product.price}</p>
               {section === "topRated" && (
                 <div className="flex items-center mt-1">
                   {renderStars(product.rating || 5)}

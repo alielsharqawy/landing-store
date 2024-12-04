@@ -42,7 +42,11 @@ function App() {
   return (
     <div>
       <Header />
-      <Navbar cart={cart} toggleCart={toggleCart} onSearch={setSearchQuery} />
+      <Navbar
+        cart={cart}
+        setCart={setCart}
+        onSearch={(searchText) => console.log(searchText)}
+      />
       {isCartOpen && <CartPage cart={cart} />}
       <AllDepartments />
       <HeroSection />
