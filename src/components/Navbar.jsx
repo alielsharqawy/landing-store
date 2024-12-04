@@ -91,7 +91,7 @@ const Navbar = ({ cart, setCart, onSearch }) => {
           <div
             className={`${
               cartPositionFixed
-                ? "fixed bottom-20 right-6 bg-yellow-500 text-white p-4 rounded-full shadow-lg transition-all duration-300"
+                ? "fixed bottom-20 right-6 bg-yellow-500 text-white p-4 rounded-full shadow-lg transition-all duration-300 z-100"
                 : "relative bg-transparent transition-all duration-300"
             } flex items-center cursor-pointer`}
             onClick={() => setShowPrompt(!showPrompt)}
@@ -103,7 +103,7 @@ const Navbar = ({ cart, setCart, onSearch }) => {
               } hover:text-yellow-300 transition-colors`}
             />
             {cart.length > 0 && (
-              <span className="absolute top-[-10px] right-[-2px] bg-amber-600 text-white text-xs sm:text-sm rounded-full px-2 py-0.5 text-center">
+              <span className="absolute top-[-2px] right-[-2px] bg-amber-600 font-medium text-white text-sm sm:text-sm rounded-full px-3 py-1 text-center">
                 {cart.length}
               </span>
             )}
@@ -122,7 +122,10 @@ const Navbar = ({ cart, setCart, onSearch }) => {
           <h2 className="text-lg font-bold mb-4">Your Cart</h2>
           {cart.length > 0 ? (
             <div>
-              <ul className="space-y-2">
+              <ul
+                className="space-y-2 overflow-y-auto"
+                style={{ maxHeight: "300px" }} // Add scrollable area
+              >
                 {cart.map((item, index) => (
                   <li
                     key={index}

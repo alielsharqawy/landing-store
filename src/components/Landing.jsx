@@ -15,7 +15,7 @@ const Landing = () => {
         <div className="absolute inset-0 bg-black bg-opacity-60 rounded-lg"></div>
 
         {/* Content */}
-        <div className="relative z-10 text-white flex items-center gap-10 ">
+        <div className="relative  text-white flex items-center gap-10 ">
           {/* Text Section */}
           <div className="flex-1">
             <h1 className="text-3xl sm:text-3xl font-bold">

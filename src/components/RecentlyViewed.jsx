@@ -47,7 +47,7 @@ const RecentlyViewed = ({ cart, addToCart, removeFromCart }) => {
     <div className="px-6 md:px-10 lg:px-20 py-10">
       {/* Header Section */}
       <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-medium">Recently Viewed</h2>
+        <h2 className="text-2xl capitalize font-bold mb-4">Recently Viewed</h2>
         <div className="flex gap-1">
           <button
             className={`hover:text-blue-500 transition ${

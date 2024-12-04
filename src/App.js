@@ -12,13 +12,14 @@ import Dashboard from "./components/Dashboard";
 import Companies from "./components/Companies";
 import RecentlyViewed from "./components/RecentlyViewed";
 import Landing from "./components/Landing";
-import Bestsellers from "./components/Bestsellers";
+import Offers from "./components/Offers";
 
 function App() {
   // cart options
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
-  // the cart
+
+  // Add item to cart
   const addToCart = (product) => {
     setCart((prevCart) => {
       if (!prevCart.some((item) => item.id === product.id)) {
@@ -27,7 +28,8 @@ function App() {
       return prevCart;
     });
   };
-  // remove items from cart
+
+  // Remove item from cart
   const removeFromCart = (productId) => {
     setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
   };
@@ -36,7 +38,7 @@ function App() {
     setIsCartOpen((prev) => !prev);
   };
 
-  // search items
+  // Search items
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -45,23 +47,34 @@ function App() {
       <Navbar
         cart={cart}
         setCart={setCart}
-        onSearch={(searchText) => console.log(searchText)}
+        onSearch={(searchText) => setSearchQuery(searchText)}
       />
       {isCartOpen && <CartPage cart={cart} />}
+      {/* drop list and links */}
       <AllDepartments />
+      {/* slider images */}
       <HeroSection />
       <Items />
+      {/* special offers */}
       <FeaturedProducts
+        cart={cart}
+        setCart={setCart}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
-        cart={cart}
-        searchQuery={searchQuery}
       />
-      <Categories />
-      <Bestsellers
+      {/* products page */}
+      <Offers
+        cart={cart}
+        setCart={setCart}
         addToCart={addToCart}
         removeFromCart={removeFromCart}
+      />
+      {/* bestseller */}
+      <Categories
         cart={cart}
+        setCart={setCart}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
       />
       <Landing />
       <RecentlyViewed

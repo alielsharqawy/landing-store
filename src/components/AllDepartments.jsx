@@ -23,33 +23,36 @@ const AllDepartments = () => {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10 mx-auto p-1 max-w-7xl">
+    <div className="flex flex-col lg:flex-row items-start  lg:items-center mx-auto px-4 lg:px-20 py-6 max-w-7xl">
       {/* All Departments Dropdown */}
-      <div className="relative w-full lg:w-auto">
+      <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between w-full lg:w-[250px] bg-yellow-500 text-gray-800 p-2 rounded-t-md shadow-md"
+          className="bg-yellow-500 text-white rounded-md px-6 py-3 flex items-center shadow-md hover:bg-yellow-600 transition duration-300"
         >
-          <CiBoxList className="text-xl" />
-          <span>All Departments</span>
+          <CiBoxList className="text-2xl mr-2" />
+          <span className="font-bold text-lg px-2">All Departments</span>
         </button>
+
         {isOpen && (
-          <ul className="absolute top-full left-0 w-full lg:w-[250px] bg-white shadow-lg z-10 ">
-            {menuItems.map((item, index) => (
-              <li
-                key={index}
-                className="p-2 text-gray-800 hover:bg-yellow-100 hover:text-yellow-800 cursor-pointer transition duration-200"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          <div className="absolute top-full left-0 bg-white shadow-lg py-3 mt-1 rounded-md w-64 z-20">
+            <ul>
+              {menuItems.map((item, index) => (
+                <li
+                  key={index}
+                  className="px-4 py-2 hover:bg-yellow-100 cursor-pointer transition duration-300"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
       </div>
 
       {/* Links */}
-      <div className="w-full lg:w-auto">
-        <ul className="flex flex-col sm:flex-row flex-wrap gap-4 text-sm text-gray-700">
+      <div className="mt-4 lg:mt-0 lg:ml-8 w-full lg:w-auto">
+        <ul className="flex flex-col sm:flex-row flex-wrap gap-4 font-medium text-gray-700">
           {links.map((link, index) =>
             link.isInfo ? (
               <li key={index} className="text-gray-500">
