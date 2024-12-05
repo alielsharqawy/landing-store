@@ -159,8 +159,8 @@ const FeaturedProducts = ({ cart, setCart }) => {
                 <button
                   className={`p-2 rounded-full transition ${
                     isInCart(product.id)
-                      ? "bg-white border-2 border-yellow-500"
-                      : "bg-gray-200"
+                      ? "text-white border-2 border-yellow-500"
+                      : "text-gray-200"
                   }`}
                   onClick={() => handleCartToggle(product)}
                 >

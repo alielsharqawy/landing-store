@@ -17,39 +17,4 @@ body {
 
 
 
-/* boxes style */
-.boxes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-.card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .boxes,
-  .boxes .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-}
-@media (max-width: 900px) {
-  .boxes,
-  .boxes .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-}
 

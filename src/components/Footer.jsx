@@ -47,7 +47,7 @@ function Footer() {
           <input
             type="text"
             placeholder="Enter Your Email Address"
-            className="flex-1 pl-5 text-md text-gray-900 border-r border-gray-300"
+            className="flex-1 pl-5 text-md text-gray-900 border-r border-gray-300 outline-none border-none"
           />
           <button className="bg-gray-900 text-white px-6 py-3 hover:bg-red-500">
             Sign Up

@@ -125,7 +125,7 @@ const Offers = ({ cart, setCart }) => {
               className="w-40 h-45 object-cover rounded-lg mb-4"
             />
             <div className="flex justify-between items-center mt-auto">
-              <p className="text-green-500 font-bold text-lg">
+              <p className="text-green-500 font-medium text-sm">
                 <span className="text-gray-800">Price: </span>${product.price}
               </p>
               <button
